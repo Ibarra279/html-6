@@ -25,8 +25,6 @@ ul{
 
 h1{
     display: block;
-    margin-block-start: 0.70em;
-    margin-block-end: 0.70em;
     font-weight: bold;
 }
 
@@ -51,14 +49,17 @@ p{
     justify-content: flex-start;
     padding: 0 76px;
     background-image: linear-gradient(180deg,rgba(0,0,0,.7) 10%,transparent);
+    z-index: 999999999;
 }
 
 .fake-logo{
     max-width: 130px;
     width: 100%;
+    opacity: 10;
 }
 
 .options-bar{
+    display: none;
     top: 70px;
     left: 0;
     margin-top: 0px;
@@ -132,7 +133,7 @@ p{
     display: flex;
     align-items: flex-end;
     height: 90vh;
-    background: var(--primary);
+    background: #141414;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
@@ -148,16 +149,19 @@ p{
     /* padding-top: 70px;
     padding-left: 50px; */
     background-size: cover;
-    padding: 0  77px 250px;
+    padding: 4rem  77px 0;
 }
 .fp-content-title{
+    text-align: center;
     font-size:60px;
     line-height: 1;
+    margin-top: 500px;
 }
 
 .fp-buttons{
     display: flex;
-    align-items: center;
+    width: 100%;
+    justify-content: center;
     margin-top: 1vh;
 }
 
@@ -189,10 +193,12 @@ p{
 }
 
 .fp-content-description{
-    font-size: 12px;
+    font-size: 19px;
     line-height: 1.6;
     margin-top: 1rem;
+    margin-bottom: 1rem;
     max-width: 344px;
+    text-align: center;
 }
 
 .fp-panel{
@@ -230,11 +236,62 @@ p{
 
 .poster{
     width: 300px;
-    height: 200px;
-    opacity: 0.5;
+    height: 180px;
+    opacity: 0.8;
     transform: scale(.9);
     transition: all 0.2s ease-out;
     cursor: pointer;
 }
 
+.poster:hover{
 
+    transform: scale(1.2);
+}
+
+.footer-items{
+    display: flex;
+    max-width: 1200px;
+    justify-content: space-between;
+    flex-direction:column;
+    gap: 0.5rem;
+    position: relative;
+    flex-wrap: wrap;
+    margin-left: 50px;
+    font-size: 20px;
+    color: var(--dark);
+    text-align: center;
+}
+
+.footer-items-space{
+    margin-bottom: 15px;
+}
+
+.button{
+   height: 100; 
+}
+
+
+
+@media screen and (min-width: 781px) {
+
+    .options-bar {
+        display: block;
+    }
+
+    .fp-buttons{
+        justify-content: start;
+    }
+
+    .fp-content-description{
+        text-align: start;
+    }
+
+    .fp-content-title{
+        text-align: start;
+    }
+
+    .footer-items{
+        flex-direction: row;
+        text-align: start;
+    }
+}
